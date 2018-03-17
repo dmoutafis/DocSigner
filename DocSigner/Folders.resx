@@ -119,9 +119,10 @@
   </resheader>
   <data name="certificateThumbprint" xml:space="preserve">
     <value>bfb2cb6da7c29e857fb3caf60b485cd2aee1ae16</value>
-    <comment>thumbprint for the desired certificate that is to be used for the signing</comment>
+    <comment>thumbprint of the certificate to be used for the signing</comment>
   </data>
   <data name="ermisLink" xml:space="preserve">
     <value>http://timestamp.ermis.gov.gr/TSS/HttpTspServer</value>
+    <comment>the authority that is used forthe timestamp</comment>
   </data>
 </root>
