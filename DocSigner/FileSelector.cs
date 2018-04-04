@@ -8,10 +8,15 @@ namespace DocSigner
         {
             string fname;
 
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "pdf files (*.pdf)|*.pdf";
-            dialog.InitialDirectory = @"C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner";
-            dialog.Title = "Select a pdf file";
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Filter = "pdf files (*.pdf)|*.pdf",
+                InitialDirectory =
+                @"C:\Users\damianos.moutafis\Documents\" +
+                @"Visual Studio 2015\Projects\DocSigner\DocSigner",
+
+                Title = "Select a pdf file"
+            };
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
