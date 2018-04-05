@@ -36,6 +36,14 @@ namespace DocSigner
 
         public void PerformSign(string fileToBeSigned)
         {
+            if (string.IsNullOrEmpty(fileToBeSigned))
+            {
+                Console.WriteLine("No file selected!");
+                Console.Write("Press any key... -");
+                Console.ReadKey();
+                return;
+            }
+
             _destPath = Path.GetDirectoryName(fileToBeSigned) + "\\";
 
             try
@@ -51,7 +59,7 @@ namespace DocSigner
             }
             catch (Exception e)
             {
-                MessageBox.Show("Exception:" + Environment.NewLine + e.Message);
+                Console.WriteLine("Exception:" + Environment.NewLine + e.Message);
             }
         }
 
@@ -112,6 +120,10 @@ namespace DocSigner
                 var log = new Logger();
                 log.ToFile("Signed " + Path.GetFileNameWithoutExtension(fileToBeSigned) + " using " + 
                     ((_pk.FriendlyName == "") ? _pk.Subject : _pk.FriendlyName),true);
+
+                Console.WriteLine("Signed file created!");
+                Console.Write("Press any key... -");
+                Console.ReadKey();
             }
             else
             {
