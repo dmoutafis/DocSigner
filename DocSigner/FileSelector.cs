@@ -6,7 +6,7 @@ namespace DocSigner
     {
         public string Select()
         {
-            string fname;
+            string filename;
 
             OpenFileDialog dialog = new OpenFileDialog
             {
@@ -20,14 +20,14 @@ namespace DocSigner
 
             if (dialog.ShowDialog() == DialogResult.OK)
             {
-                fname = dialog.FileName;
+                filename = dialog.FileName;
             }
             else
             {
-                fname = string.Empty;
+                filename = string.Empty;
             }
 
-            return fname;
+            return filename;
         }
     }
 }

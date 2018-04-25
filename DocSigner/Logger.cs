@@ -17,7 +17,7 @@
 
             using (StreamWriter lf = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + "\\logger.log", true))
             {
-                lf.WriteLine("{0} ==> {1}", DateTime.Now, message);
+                lf.WriteLine("{0}:{1}", DateTime.Now, message);
             }
         }
     }

@@ -114,7 +114,7 @@ namespace DocSigner
                 _signedFile = (_destPath + Path.GetFileNameWithoutExtension(fileToBeSigned) + "_s.pdf").ToLower();
 
                 Sign(fileToBeSigned,_signedFile,_chain,_pk,DigestAlgorithms.SHA1,CryptoStandard.CMS,
-                                        "Electronic invoicing",null,_crlList,_ocspClient,_tsaClient,0);
+                                        "eInvoicing",null,_crlList,_ocspClient,_tsaClient,0);
 
                 // Logging the operation to txt file
                 var log = new Logger();
