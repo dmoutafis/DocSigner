@@ -39,7 +39,7 @@ namespace DocSigner
             if (string.IsNullOrEmpty(fileToBeSigned))
             {
                 Console.WriteLine("No file selected!");
-                Console.Write("Press any key... -");
+                Console.Write("Press any key...");
                 Console.ReadKey();
                 return;
             }
@@ -111,7 +111,7 @@ namespace DocSigner
             if (OkToSign(fileToBeSigned))
             {
                 // Set the signed file's full path+filename
-                _signedFile = (_destPath + Path.GetFileNameWithoutExtension(fileToBeSigned) + "_s.pdf").ToLower();
+                _signedFile = (_destPath + Path.GetFileNameWithoutExtension(fileToBeSigned) + "_signed.pdf").ToLower();
 
                 Sign(fileToBeSigned,_signedFile,_chain,_pk,DigestAlgorithms.SHA1,CryptoStandard.CMS,
                                         "eInvoicing",null,_crlList,_ocspClient,_tsaClient,0);
@@ -122,7 +122,7 @@ namespace DocSigner
                     ((_pk.FriendlyName == "") ? _pk.Subject : _pk.FriendlyName),true);
 
                 Console.WriteLine("Signed file created!");
-                Console.Write("Press any key... -");
+                Console.Write("Press any key...");
                 Console.ReadKey();
             }
             else

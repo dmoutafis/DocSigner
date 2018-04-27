@@ -10,14 +10,10 @@ namespace DocSigner
         {
             Application.EnableVisualStyles();
 
-            Console.WriteLine("Selecting  file...");
+            // Start the signing process
+            var signingProcess = new ProcessCore();
+            signingProcess.Execute();
 
-            // Perform signing of the file
-            var file = new FileSelector();
-            var pdf = new PdfManipulator();
-
-            pdf.PerformSign(file.Select());
-            
             Application.Exit();
         }
     }
