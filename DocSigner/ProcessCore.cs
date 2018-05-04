@@ -11,10 +11,11 @@ namespace DocSigner
             Console.WriteLine("Selecting  file...");
 
             // Perform signing of the file
+            var logFile = $"DocSigner-{DateTime.Now.ToString("yyyyMMdd-HHmmss")}.log";
             var file = new FileSelector();
             var pdf = new PdfManipulator();
 
-            pdf.PerformSign(file.Select());
+            pdf.PerformSign(file.Select(), logFile);
         }
     }
 }

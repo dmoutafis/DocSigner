@@ -7,7 +7,6 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.security;
 using X509Certificate = Org.BouncyCastle.X509.X509Certificate;
-using System.Windows.Forms;
 
 namespace DocSigner
 {
@@ -23,6 +22,7 @@ namespace DocSigner
         private X509Certificate _cert { get; set; }
         private string _thumbprint { get; set; }
         private string _destPath { get; set; }
+        private string _logfile { get; set; }
 
         public PdfManipulator()
         {
@@ -32,10 +32,14 @@ namespace DocSigner
             _signedFile = string.Empty;
             _thumbprint = Folders.certificateThumbprint;
             _chain = new List<X509Certificate>();
+            
+
         }
 
-        public void PerformSign(string fileToBeSigned)
+        public void PerformSign(string fileToBeSigned, string logfile)
         {
+            _logfile = logfile;
+
             if (string.IsNullOrEmpty(fileToBeSigned))
             {
                 Console.WriteLine("No file selected!");
@@ -117,9 +121,9 @@ namespace DocSigner
                                         "eInvoicing",null,_crlList,_ocspClient,_tsaClient,0);
 
                 // Logging the operation to txt file
-                var log = new Logger();
-                log.ToFile("Signed " + Path.GetFileNameWithoutExtension(fileToBeSigned) + " using " + 
-                    ((_pk.FriendlyName == "") ? _pk.Subject : _pk.FriendlyName),true);
+                var log = new Logger(_logfile);
+                log.ToFile("Signed " + "'" + Path.GetFileNameWithoutExtension(fileToBeSigned) + "'" + " using " + 
+                    ((_pk.FriendlyName == "") ? _pk.Subject : _pk.FriendlyName));
 
                 Console.WriteLine("Signed file created!");
                 Console.Write("Press any key...");
