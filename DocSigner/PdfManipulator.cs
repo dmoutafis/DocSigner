@@ -115,7 +115,7 @@ namespace DocSigner
             if (OkToSign(fileToBeSigned))
             {
                 // Set the signed file's full path+filename
-                _signedFile = (_destPath + Path.GetFileNameWithoutExtension(fileToBeSigned) + "_signed.pdf").ToLower();
+                _signedFile = (_destPath + Path.GetFileNameWithoutExtension(fileToBeSigned) + "_signed.pdf");
 
                 Sign(fileToBeSigned,_signedFile,_chain,_pk,DigestAlgorithms.SHA1,CryptoStandard.CMS,
                                         "eInvoicing",null,_crlList,_ocspClient,_tsaClient,0);
@@ -123,7 +123,7 @@ namespace DocSigner
                 // Logging the operation to txt file
                 var log = new Logger(_logfile);
                 log.ToFile("Signed " + "'" + Path.GetFileNameWithoutExtension(fileToBeSigned) + "'" + " using " + 
-                    ((_pk.FriendlyName == "") ? _pk.Subject : _pk.FriendlyName));
+                    ((_pk.FriendlyName == "") ? _pk.Subject : "'" + _pk.FriendlyName + "'"));
 
                 Console.WriteLine("Signed file created!");
                 Console.Write("Press any key...");

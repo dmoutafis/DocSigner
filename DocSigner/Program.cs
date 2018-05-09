@@ -13,8 +13,6 @@ namespace DocSigner
             // Start the signing process
             var signingProcess = new ProcessCore();
             signingProcess.Execute();
-
-            Application.Exit();
         }
     }
 }

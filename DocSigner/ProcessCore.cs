@@ -11,7 +11,7 @@ namespace DocSigner
             Console.WriteLine("Selecting  file...");
 
             // Perform signing of the file
-            var logFile = $"DocSigner-{DateTime.Now.ToString("yyyyMMdd-HHmmss")}.log";
+            var logFile = "DocSigner.log";
             var file = new FileSelector();
             var pdf = new PdfManipulator();
 
