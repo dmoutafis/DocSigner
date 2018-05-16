@@ -19,7 +19,7 @@ namespace DocSigner {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Folders {
@@ -61,11 +61,20 @@ namespace DocSigner {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to bfb2cb6da7c29e857fb3caf60b485cd2aee1ae16.
+        ///   Looks up a localized string similar to b2109ecc0699022e1a67c22766cdf44197b7249a.
         /// </summary>
         public static string certificateThumbprint {
             get {
                 return ResourceManager.GetString("certificateThumbprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to bfb2cb6da7c29e857fb3caf60b485cd2aee1ae16.
+        /// </summary>
+        public static string DemoThumbprint {
+            get {
+                return ResourceManager.GetString("DemoThumbprint", resourceCulture);
             }
         }
         

@@ -7,6 +7,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.security;
 using X509Certificate = Org.BouncyCastle.X509.X509Certificate;
+using System.Text;
 
 namespace DocSigner
 {
@@ -23,22 +24,30 @@ namespace DocSigner
         private string _thumbprint { get; set; }
         private string _destPath { get; set; }
         private string _logfile { get; set; }
+        private string _myReason { get; set; }
+        private string _password { get; set; }
 
         public PdfManipulator()
         {
+            
             _pk = null;
             _collection = null;
             _ocspClient = null;
             _signedFile = string.Empty;
+#if DEBUG
+            _thumbprint = Folders.DemoThumbprint;
+#else
             _thumbprint = Folders.certificateThumbprint;
+#endif
             _chain = new List<X509Certificate>();
-            
 
         }
 
         public void PerformSign(string fileToBeSigned, string logfile)
         {
             _logfile = logfile;
+            _myReason = "";
+            _password = "";
 
             if (string.IsNullOrEmpty(fileToBeSigned))
             {
@@ -53,10 +62,12 @@ namespace DocSigner
             try
             {
                 // Pick a signing certificate from specific thumbprint in 'my store'
-                GetCertificate(Folders.certificateThumbprint);
+                GetCertificate(_thumbprint);
 
                 // Getting the timestamp from ERMIS.
                 if (_tsaClient == null) GetTimestamp(_chain);
+
+                
 
                 // Perform the signing if file exists && there is a certificate
                 ProcessSigning(fileToBeSigned,_destPath,_pk,_chain,_collection,_crlList,_ocspClient,_tsaClient);
@@ -97,7 +108,7 @@ namespace DocSigner
             for (int i = 0; i < _chain.Count; i++)
             {
                 _cert = _chain[i];
-                string tsaUrl = Folders.ermisLink; // The link is in the 'folders.resx' file
+                string tsaUrl = Folders.ermisLink;
                 if (tsaUrl != null) _tsaClient = new TSAClientBouncyCastle(tsaUrl);
             }
 
@@ -116,10 +127,17 @@ namespace DocSigner
             {
                 // Set the signed file's full path+filename
                 _signedFile = (_destPath + Path.GetFileNameWithoutExtension(fileToBeSigned) + "_signed.pdf");
+#if DEBUG
+                _password = null;
+                Sign(fileToBeSigned,_signedFile,_chain,_pk,DigestAlgorithms.SHA1,CryptoStandard.CMS,
+                                        "development",null,_crlList,_ocspClient,_tsaClient,0, _password);
+#else
+                // Get signing reasin and password as input from the user
+                GetDetails();
 
                 Sign(fileToBeSigned,_signedFile,_chain,_pk,DigestAlgorithms.SHA1,CryptoStandard.CMS,
-                                        "eInvoicing",null,_crlList,_ocspClient,_tsaClient,0);
-
+                                        _myReason,null,_crlList,_ocspClient,_tsaClient,0, _password);
+#endif
                 // Logging the operation to txt file
                 var log = new Logger(_logfile);
                 log.ToFile("Signed " + "'" + Path.GetFileNameWithoutExtension(fileToBeSigned) + "'" + " using " + 
@@ -142,7 +160,8 @@ namespace DocSigner
                          ICollection<ICrlClient> _crlList,
                          IOcspClient _ocspClient,
                          ITSAClient _tsaClient,
-                         int estimatedSize)
+                         int estimatedSize,
+                         string _password)
         {
             // Creating the reader and the stamper
             PdfReader reader = null;
@@ -158,6 +177,15 @@ namespace DocSigner
                 PdfSignatureAppearance appearance = stamper.SignatureAppearance;
                 appearance.Reason = reason;
                 appearance.SetVisibleSignature(new Rectangle(400,40,480,70),1,"signature");
+
+                // If password is not null, then set encryption
+                if (!string.IsNullOrEmpty(_password))
+                {
+                    byte[] USER = Encoding.ASCII.GetBytes(_password);
+                    byte[] OWNER = Encoding.ASCII.GetBytes(_password);
+
+                    stamper.SetEncryption(USER, OWNER, PdfWriter.AllowPrinting, PdfWriter.ENCRYPTION_AES_128);
+                }
 
                 // Creating the signature
                 IExternalSignature pks = new X509Certificate2Signature(_pk,digestAlgorithm);
@@ -188,6 +216,15 @@ namespace DocSigner
         {
             return (!string.IsNullOrWhiteSpace(fileToBeSigned) && 
                     File.Exists(fileToBeSigned) && _collection.Count > 0);
+        }
+
+        private void GetDetails()
+        {
+            Console.Write("Enter sign reason:");
+            _myReason = Console.ReadLine();
+
+            Console.Write("Enter password for encryption:");
+            _password = Console.ReadLine();
         }
     }
 }

@@ -15,7 +15,7 @@ namespace DocSigner
             var file = new FileSelector();
             var pdf = new PdfManipulator();
 
-            pdf.PerformSign(file.Select(), logFile);
+            pdf.PerformSign(file.Select(), logFile); // Use null instead for '1234' for not password-protect the pdf
         }
     }
 }
