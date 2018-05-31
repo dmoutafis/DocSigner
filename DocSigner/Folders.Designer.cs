@@ -19,10 +19,10 @@ namespace DocSigner {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Folders {
+    internal class Folders {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace DocSigner {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DocSigner.Folders", typeof(Folders).Assembly);
@@ -51,7 +51,7 @@ namespace DocSigner {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace DocSigner {
         /// <summary>
         ///   Looks up a localized string similar to b2109ecc0699022e1a67c22766cdf44197b7249a.
         /// </summary>
-        public static string certificateThumbprint {
+        internal static string certificateThumbprint {
             get {
                 return ResourceManager.GetString("certificateThumbprint", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace DocSigner {
         /// <summary>
         ///   Looks up a localized string similar to bfb2cb6da7c29e857fb3caf60b485cd2aee1ae16.
         /// </summary>
-        public static string DemoThumbprint {
+        internal static string DemoThumbprint {
             get {
                 return ResourceManager.GetString("DemoThumbprint", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace DocSigner {
         /// <summary>
         ///   Looks up a localized string similar to http://timestamp.ermis.gov.gr/TSS/HttpTspServer.
         /// </summary>
-        public static string ermisLink {
+        internal static string ermisLink {
             get {
                 return ResourceManager.GetString("ermisLink", resourceCulture);
             }

@@ -43,3 +43,14 @@ C:\Users\terou\Documents\Visual Studio 2017\Projects\DocSigner\DocSigner\obj\Deb
 C:\Users\terou\Documents\Visual Studio 2017\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.csproj.CopyComplete
 C:\Users\terou\Documents\Visual Studio 2017\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.exe
 C:\Users\terou\Documents\Visual Studio 2017\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.pdb
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\bin\Debug\DocSigner.exe.config
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\bin\Debug\DocSigner.exe
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\bin\Debug\DocSigner.pdb
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\bin\Debug\itextsharp.dll
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.Folders.resources
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.Properties.Resources.resources
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.csproj.GenerateResource.cache
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.csproj.CoreCompileInputs.cache
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.csproj.CopyComplete
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.exe
+C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.pdb

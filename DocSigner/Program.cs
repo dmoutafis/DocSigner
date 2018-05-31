@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 
 namespace DocSigner
 {
@@ -8,11 +7,18 @@ namespace DocSigner
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            var logFile = "DocSigner.log";
+            var log = new Logger(logFile);
+
+            // Log the start of the program
+            log.ToFile("Program started.");
 
             // Start the signing process
             var signingProcess = new ProcessCore();
             signingProcess.Execute();
+
+            // Log the end of the program
+            log.ToFile("Program ended.");
         }
     }
 }

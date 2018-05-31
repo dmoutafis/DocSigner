@@ -1,13 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Security;
+using System.Text;
+
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.security;
+
+using Org.BouncyCastle.Security;
+
 using X509Certificate = Org.BouncyCastle.X509.X509Certificate;
-using System.Text;
 
 namespace DocSigner
 {
@@ -29,7 +32,6 @@ namespace DocSigner
 
         public PdfManipulator()
         {
-            
             _pk = null;
             _collection = null;
             _ocspClient = null;
@@ -40,7 +42,6 @@ namespace DocSigner
             _thumbprint = Folders.certificateThumbprint;
 #endif
             _chain = new List<X509Certificate>();
-
         }
 
         public void PerformSign(string fileToBeSigned, string logfile)
@@ -49,11 +50,13 @@ namespace DocSigner
             _myReason = "";
             _password = "";
 
+            var log = new Logger(_logfile);
+            log.ToFile("Signing process started.");
+
             if (string.IsNullOrEmpty(fileToBeSigned))
             {
+                log.ToFile("No file selected!");
                 Console.WriteLine("No file selected!");
-                Console.Write("Press any key...");
-                Console.ReadKey();
                 return;
             }
 
@@ -67,14 +70,13 @@ namespace DocSigner
                 // Getting the timestamp from ERMIS.
                 if (_tsaClient == null) GetTimestamp(_chain);
 
-                
-
                 // Perform the signing if file exists && there is a certificate
                 ProcessSigning(fileToBeSigned,_destPath,_pk,_chain,_collection,_crlList,_ocspClient,_tsaClient);
             }
             catch (Exception e)
             {
                 Console.WriteLine("Exception:" + Environment.NewLine + e.Message);
+                log.ToFile($"Exception:{e.Message}");
             }
         }
 
@@ -99,7 +101,12 @@ namespace DocSigner
                     _chain.Add(DotNetUtilities.FromX509Certificate(x509ChainElement.Certificate));
                 }
             }
-
+            else
+            {
+                var log = new Logger(_logfile);
+                log.ToFile("No certificate found for signing!");
+            }
+           
             x509Store.Close();
         }
 
@@ -119,9 +126,13 @@ namespace DocSigner
         }
 
         private void ProcessSigning(string fileToBeSigned,
-                                    string _destPath,X509Certificate2 _pk,
-                                    IList<X509Certificate> _chain,X509Certificate2Collection _collection,
-                                    IList<ICrlClient> _crlList,IOcspClient _ocspClient,ITSAClient _tsaClient)
+                                    string _destPath,
+                                    X509Certificate2 _pk,
+                                    IList<X509Certificate> _chain,
+                                    X509Certificate2Collection _collection,
+                                    IList<ICrlClient> _crlList,
+                                    IOcspClient _ocspClient,
+                                    ITSAClient _tsaClient)
         {
             if (OkToSign(fileToBeSigned))
             {
@@ -144,8 +155,6 @@ namespace DocSigner
                     ((_pk.FriendlyName == "") ? _pk.Subject : "'" + _pk.FriendlyName + "'"));
 
                 Console.WriteLine("Signed file created!");
-                Console.Write("Press any key...");
-                Console.ReadKey();
             }
             else
             {
@@ -199,7 +208,7 @@ namespace DocSigner
             }
         }
 
-        public void ProtectWithPassword(string file,string cardcode)
+        public void ProtectWithPassword(string file, string password)
         {
             var source = file;
             var dest = Path.GetDirectoryName(file) + "\\" + Path.GetFileNameWithoutExtension(file) + "_pwd.pdf";
@@ -208,7 +217,7 @@ namespace DocSigner
             using (Stream output = new FileStream(dest,FileMode.Create,FileAccess.Write,FileShare.None))
             {
                 PdfReader reader = new PdfReader(input);
-                PdfEncryptor.Encrypt(reader,output,true,cardcode,cardcode,PdfWriter.AllowCopy);
+                PdfEncryptor.Encrypt(reader,output,true,password,password,PdfWriter.AllowCopy);
             }
         }
 
