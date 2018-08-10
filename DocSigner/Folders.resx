@@ -117,12 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="certificateThumbprint" xml:space="preserve">
+  <data name="ToraDirectCertificateThumbprint" xml:space="preserve">
     <value>b2109ecc0699022e1a67c22766cdf44197b7249a</value>
     <comment>thumbprint of the certificate to be used for the signing</comment>
   </data>
-  <data name="DemoThumbprint" xml:space="preserve">
-    <value>bfb2cb6da7c29e857fb3caf60b485cd2aee1ae16</value>
+  <data name="ToraWalletCertificateThumbprint" xml:space="preserve">
+    <value>ca237d87f0832168292032ff68b9cbef2268e723</value>
     <comment>thumbprint of the demo certificate to be used for the signing</comment>
   </data>
   <data name="ermisLink" xml:space="preserve">

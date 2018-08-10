@@ -19,7 +19,7 @@ namespace DocSigner {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Folders {
@@ -61,29 +61,29 @@ namespace DocSigner {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to b2109ecc0699022e1a67c22766cdf44197b7249a.
-        /// </summary>
-        internal static string certificateThumbprint {
-            get {
-                return ResourceManager.GetString("certificateThumbprint", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to bfb2cb6da7c29e857fb3caf60b485cd2aee1ae16.
-        /// </summary>
-        internal static string DemoThumbprint {
-            get {
-                return ResourceManager.GetString("DemoThumbprint", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to http://timestamp.ermis.gov.gr/TSS/HttpTspServer.
         /// </summary>
         internal static string ermisLink {
             get {
                 return ResourceManager.GetString("ermisLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to b2109ecc0699022e1a67c22766cdf44197b7249a.
+        /// </summary>
+        internal static string ToraDirectCertificateThumbprint {
+            get {
+                return ResourceManager.GetString("ToraDirectCertificateThumbprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ca237d87f0832168292032ff68b9cbef2268e723.
+        /// </summary>
+        internal static string ToraWalletCertificateThumbprint {
+            get {
+                return ResourceManager.GetString("ToraWalletCertificateThumbprint", resourceCulture);
             }
         }
     }

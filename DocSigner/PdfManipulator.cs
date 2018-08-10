@@ -36,11 +36,10 @@ namespace DocSigner
             _collection = null;
             _ocspClient = null;
             _signedFile = string.Empty;
-#if DEBUG
-            _thumbprint = Folders.DemoThumbprint;
-#else
-            _thumbprint = Folders.certificateThumbprint;
-#endif
+
+            //_thumbprint = Folders.ToraDirectCertificateThumbprint;
+            _thumbprint = Folders.ToraWalletCertificateThumbprint;
+
             _chain = new List<X509Certificate>();
         }
 
@@ -143,7 +142,7 @@ namespace DocSigner
                 Sign(fileToBeSigned,_signedFile,_chain,_pk,DigestAlgorithms.SHA1,CryptoStandard.CMS,
                                         "development",null,_crlList,_ocspClient,_tsaClient,0, _password);
 #else
-                // Get signing reasin and password as input from the user
+                // Get signing reason and password as input from the user
                 GetDetails();
 
                 Sign(fileToBeSigned,_signedFile,_chain,_pk,DigestAlgorithms.SHA1,CryptoStandard.CMS,
