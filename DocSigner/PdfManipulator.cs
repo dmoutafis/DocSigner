@@ -37,8 +37,8 @@ namespace DocSigner
             _ocspClient = null;
             _signedFile = string.Empty;
 
-            //_thumbprint = Folders.ToraDirectCertificateThumbprint;
-            _thumbprint = Folders.ToraWalletCertificateThumbprint;
+            _thumbprint = Folders.ToraDirectCertificateThumbprint;
+            //_thumbprint = Folders.ToraWalletCertificateThumbprint;
 
             _chain = new List<X509Certificate>();
         }
@@ -104,6 +104,7 @@ namespace DocSigner
             {
                 var log = new Logger(_logfile);
                 log.ToFile("No certificate found for signing!");
+                Console.WriteLine("Please check log file!");
             }
            
             x509Store.Close();
