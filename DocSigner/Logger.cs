@@ -22,7 +22,10 @@
 
             using (StreamWriter lf = new StreamWriter(AppDomain.CurrentDomain.BaseDirectory + _logfile, true))
             {
-                lf.WriteLine("{0}:{1}", DateTime.Now, message);
+                if (message.Contains("ended"))
+                    lf.Write("{0}: {1}", DateTime.Now, message);
+                else
+                    lf.WriteLine("{0}: {1}", DateTime.Now, message);
             }
         }
     }

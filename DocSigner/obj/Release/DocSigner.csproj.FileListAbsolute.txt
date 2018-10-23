@@ -20,3 +20,15 @@ C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.cspr
 C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.exe
 C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.pdb
 C:\Users\terou\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.csprojAssemblyReference.cache
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\bin\Release\DocSigner.exe.config
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\bin\Release\DocSigner.exe
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\bin\Release\DocSigner.pdb
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\bin\Release\itextsharp.dll
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.csprojAssemblyReference.cache
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.Folders.resources
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.Properties.Resources.resources
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.csproj.GenerateResource.cache
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.csproj.CoreCompileInputs.cache
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.csproj.CopyComplete
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.exe
+C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.pdb

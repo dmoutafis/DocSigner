@@ -105,6 +105,7 @@ namespace DocSigner
                 var log = new Logger(_logfile);
                 log.ToFile("No certificate found for signing!");
                 Console.WriteLine("Please check log file!");
+                Console.ReadKey();
             }
            
             x509Store.Close();
