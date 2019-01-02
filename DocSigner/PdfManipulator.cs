@@ -37,7 +37,7 @@ namespace DocSigner
             _ocspClient = null;
             _signedFile = string.Empty;
 
-            _thumbprint = Folders.ToraDirectCertificateThumbprint;
+            _thumbprint = Details.ToraDirectCertificateThumbprint;
             //_thumbprint = Folders.ToraWalletCertificateThumbprint;
 
             _chain = new List<X509Certificate>();
@@ -116,7 +116,7 @@ namespace DocSigner
             for (int i = 0; i < _chain.Count; i++)
             {
                 _cert = _chain[i];
-                string tsaUrl = Folders.ermisLink;
+                string tsaUrl = Details.ermisLink;
                 if (tsaUrl != null) _tsaClient = new TSAClientBouncyCastle(tsaUrl);
             }
 

@@ -2,7 +2,6 @@ C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSi
 C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\bin\Release\DocSigner.exe
 C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\bin\Release\DocSigner.pdb
 C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\bin\Release\itextsharp.dll
-C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Release\DocSigner.Folders.resources
 C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Release\DocSigner.Properties.Resources.resources
 C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Release\DocSigner.csproj.GenerateResource.Cache
 C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Release\DocSigner.exe
@@ -32,3 +31,4 @@ C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.c
 C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.csproj.CopyComplete
 C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.exe
 C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Release\DocSigner.pdb
+C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Release\DocSigner.Details.resources

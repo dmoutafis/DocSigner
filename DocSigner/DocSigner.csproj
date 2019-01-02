@@ -52,19 +52,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileSelector.cs" />
-    <Compile Include="Folders.Designer.cs">
+    <Compile Include="Details.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Folders.resx</DependentUpon>
+      <DependentUpon>Details.resx</DependentUpon>
     </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="ProcessCore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PdfManipulator.cs" />
-    <EmbeddedResource Include="Folders.resx">
+    <EmbeddedResource Include="Details.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Folders.Designer.cs</LastGenOutput>
+      <LastGenOutput>Details.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
