@@ -70,7 +70,7 @@ namespace DocSigner {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to b2109ecc0699022e1a67c22766cdf44197b7249a.
+        ///   Looks up a localized string similar to d605aa593989a85e5a331f0c579665b2d78152b2.
         /// </summary>
         internal static string ToraDirectCertificateThumbprint {
             get {

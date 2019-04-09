@@ -117,16 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ermisLink" xml:space="preserve">
+    <value>http://timestamp.ermis.gov.gr/TSS/HttpTspServer</value>
+    <comment>the authority that is used for the timestamp</comment>
+  </data>
   <data name="ToraDirectCertificateThumbprint" xml:space="preserve">
-    <value>b2109ecc0699022e1a67c22766cdf44197b7249a</value>
+    <value>d605aa593989a85e5a331f0c579665b2d78152b2</value>
     <comment>thumbprint of the certificate to be used for the signing</comment>
   </data>
   <data name="ToraWalletCertificateThumbprint" xml:space="preserve">
     <value>ca237d87f0832168292032ff68b9cbef2268e723</value>
     <comment>thumbprint of the demo certificate to be used for the signing</comment>
-  </data>
-  <data name="ermisLink" xml:space="preserve">
-    <value>http://timestamp.ermis.gov.gr/TSS/HttpTspServer</value>
-    <comment>the authority that is used forthe timestamp</comment>
   </data>
 </root>
