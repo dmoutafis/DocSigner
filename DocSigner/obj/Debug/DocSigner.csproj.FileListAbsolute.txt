@@ -66,3 +66,13 @@ C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.csp
 C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.exe
 C:\Users\Damianos\Documents\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.pdb
 C:\Users\damianos.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.Details.resources
+C:\Users\d.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\bin\Debug\DocSigner.exe.config
+C:\Users\d.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.exe
+C:\Users\d.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.pdb
+C:\Users\d.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\bin\Debug\DocSigner.exe
+C:\Users\d.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\bin\Debug\DocSigner.pdb
+C:\Users\d.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\bin\Debug\itextsharp.dll
+C:\Users\d.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.csprojResolveAssemblyReference.cache
+C:\Users\d.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.Details.resources
+C:\Users\d.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.Properties.Resources.resources
+C:\Users\d.moutafis\Documents\Visual Studio 2015\Projects\DocSigner\DocSigner\obj\Debug\DocSigner.csproj.GenerateResource.Cache

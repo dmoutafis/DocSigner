@@ -122,11 +122,11 @@
     <comment>the authority that is used for the timestamp</comment>
   </data>
   <data name="ToraDirectCertificateThumbprint" xml:space="preserve">
-    <value>d605aa593989a85e5a331f0c579665b2d78152b2</value>
+    <value>836806c27a7883f4746652069b19411ca04579a4</value>
     <comment>thumbprint of the certificate to be used for the signing</comment>
   </data>
   <data name="ToraWalletCertificateThumbprint" xml:space="preserve">
-    <value>ca237d87f0832168292032ff68b9cbef2268e723</value>
+    <value>8f35a21c31095b0e1f307b65e1c05443353a51e5</value>
     <comment>thumbprint of the demo certificate to be used for the signing</comment>
   </data>
 </root>

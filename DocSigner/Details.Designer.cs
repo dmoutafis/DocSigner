@@ -70,7 +70,7 @@ namespace DocSigner {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to d605aa593989a85e5a331f0c579665b2d78152b2.
+        ///   Looks up a localized string similar to 836806c27a7883f4746652069b19411ca04579a4.
         /// </summary>
         internal static string ToraDirectCertificateThumbprint {
             get {
@@ -79,7 +79,7 @@ namespace DocSigner {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ca237d87f0832168292032ff68b9cbef2268e723.
+        ///   Looks up a localized string similar to 8f35a21c31095b0e1f307b65e1c05443353a51e5.
         /// </summary>
         internal static string ToraWalletCertificateThumbprint {
             get {
